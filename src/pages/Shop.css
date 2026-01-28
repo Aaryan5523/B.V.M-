@@ -1,0 +1,103 @@
+.shop-page {
+    background-color: var(--bg-light);
+}
+
+.shop-header {
+    padding: 160px 0 80px;
+    background-color: #fcfcfc;
+    border-bottom: 1px solid #efefef;
+    text-align: center;
+}
+
+.gold-text {
+    color: #D4AF37;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.serif-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-top: 20px;
+    color: #1A2B3C;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.filter-nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.filter-btn-shop {
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #999;
+    cursor: pointer;
+    padding: 10px 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.filter-btn-shop::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #D4AF37;
+    transition: all 0.3s ease;
+}
+
+.filter-btn-shop.active {
+    color: #1A2B3C;
+}
+
+.filter-btn-shop.active::after {
+    width: 100%;
+}
+
+.filter-btn-shop:hover {
+    color: #1A2B3C;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .shop-header {
+        padding: 120px 0 60px;
+    }
+
+    .serif-title {
+        font-size: 2.5rem;
+    }
+
+    .filter-nav {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}

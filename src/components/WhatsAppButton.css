@@ -1,0 +1,99 @@
+/* ==================== WHATSAPP BUTTON PREMIUM ==================== */
+
+.whatsapp-sticky {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #25D366 0%, #20BA5A 100%);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        0 8px 24px rgba(37, 211, 102, 0.4),
+        0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 2000;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+    animation: pulseWhatsApp 3s ease-in-out infinite;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+@keyframes pulseWhatsApp {
+
+    0%,
+    100% {
+        box-shadow:
+            0 8px 24px rgba(37, 211, 102, 0.4),
+            0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    50% {
+        box-shadow:
+            0 8px 32px rgba(37, 211, 102, 0.6),
+            0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.whatsapp-sticky:hover {
+    transform: scale(1.12) translateY(-6px) rotate(5deg);
+    box-shadow:
+        0 12px 40px rgba(37, 211, 102, 0.6),
+        0 6px 20px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(135deg, #20BA5A 0%, #1DA851 100%);
+}
+
+/* Tooltip */
+.wa-tooltip {
+    position: absolute;
+    right: 80px;
+    background: #1A1A1A;
+    /* Charcoal/Dark color */
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    /* Using solar gold for border */
+}
+
+.wa-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -6px;
+    transform: translateY(-50%);
+    border-width: 6px 0 6px 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent #1A1A1A;
+}
+
+.whatsapp-sticky:hover .wa-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-8px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .whatsapp-sticky {
+        bottom: 24px;
+        right: 24px;
+        width: 56px;
+        height: 56px;
+    }
+
+    .wa-tooltip {
+        display: none;
+    }
+}
