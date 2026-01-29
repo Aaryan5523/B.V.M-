@@ -52,8 +52,8 @@ const ProductCollection = () => {
         <section id="collection" className="collection-section">
             <div className="container">
                 <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-                    <span style={{ color: 'var(--primary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px' }}>Solar Series</span>
-                    <h2 style={{ fontSize: '3rem', marginTop: '0.5rem' }}>Our Signature Collection</h2>
+                    <span style={{ color: 'var(--primary)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '2px', display: 'block', marginBottom: '0.5rem' }}>Solar Series</span>
+                    <h2>Our Signature Collection</h2>
 
                     <div className="filter-tabs">
                         {categories.map(cat => (
@@ -68,29 +68,37 @@ const ProductCollection = () => {
                     </div>
                 </div>
 
-                <motion.div layout className="grid grid-3">
+                <motion.div layout className="grid grid-3" style={{ gap: '1.5rem' }}>
                     <AnimatePresence mode='popLayout'>
-                        {filteredProducts.map(product => (
+                        {filteredProducts.map((product, index) => (
                             <motion.div
                                 key={product.id}
                                 layout
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0, scale: 0.9 }}
-                                transition={{ duration: 0.3 }}
-                                className="product-card"
+                                transition={{ duration: 0.3, delay: index * 0.05 }}
+                                className="product-card glass-panel"
+                                style={{
+                                    padding: '1.5rem',
+                                    borderRadius: '1.5rem',
+                                    border: '1px solid rgba(255, 215, 0, 0.1)'
+                                }}
                             >
-                                <div className="product-image">
-                                    <img src={product.image} alt={product.name} />
+                                <div className="product-image" style={{ height: '180px', marginBottom: '1.5rem', borderRadius: '1rem', overflow: 'hidden', background: '#f8f8f8' }}>
+                                    <img src={product.image} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                                 </div>
-                                <div className="product-info">
-                                    <h3>{product.name}</h3>
-                                    <ul className="product-features">
+                                <div className="product-info" style={{ textAlign: 'left' }}>
+                                    <span style={{ fontSize: '0.8rem', color: 'var(--primary)', fontWeight: 600, textTransform: 'uppercase' }}>{product.category}</span>
+                                    <h3 style={{ fontSize: '1.25rem', margin: '0.5rem 0' }}>{product.name}</h3>
+                                    <ul className="product-features" style={{ padding: 0, listStyle: 'none', margin: '1rem 0' }}>
                                         {product.features.map((feat, i) => (
-                                            <li key={i}>{feat}</li>
+                                            <li key={i} style={{ fontSize: '0.9rem', opacity: 0.7, marginBottom: '0.4rem', display: 'flex', alignItems: 'center' }}>
+                                                <span style={{ color: 'var(--primary)', marginRight: '0.5rem' }}>•</span> {feat}
+                                            </li>
                                         ))}
                                     </ul>
-                                    <button className="btn btn-secondary" style={{ width: '100%', marginTop: '1rem' }}>View Specifications</button>
+                                    <button className="btn btn-secondary" style={{ width: '100%', marginTop: '0.5rem', borderRadius: '0.8rem' }}>View Specs</button>
                                 </div>
                             </motion.div>
                         ))}

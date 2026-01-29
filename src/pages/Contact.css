@@ -108,6 +108,19 @@
     color: #777;
 }
 
+.contact-form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .contact-form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
 .premium-input-group {
     margin-bottom: 25px;
     position: relative;

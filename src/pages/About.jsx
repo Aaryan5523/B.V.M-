@@ -36,13 +36,13 @@ const AboutPage = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <span className="about-subtitle">Who we are</span>
-                    <h1 className="serif-title" style={{ color: 'white', fontSize: '4rem' }}>Our Journey to a Sustainable Future</h1>
+                    <h1 className="serif-title">Our Journey to a Sustainable Future</h1>
                 </motion.div>
             </section>
 
             <section className="history-section">
                 <div className="container">
-                    <div className="grid grid-2" style={{ alignItems: 'center', gap: '80px' }}>
+                    <div className="grid grid-2 about-history-grid">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}

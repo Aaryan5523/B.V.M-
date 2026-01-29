@@ -52,7 +52,7 @@ const Hero = () => {
                         >
                             <h1>{slides[currentSlide].title}</h1>
                             <p>{slides[currentSlide].subtitle}</p>
-                            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+                            <div className="hero-btns">
                                 <a href="/shop" className="btn btn-primary">Shop Collections</a>
                                 <a href="/about" className="btn btn-secondary">Learn More</a>
                             </div>

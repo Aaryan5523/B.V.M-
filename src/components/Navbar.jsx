@@ -60,7 +60,7 @@ const Navbar = () => {
   return (
     <>
       <motion.nav
-        className={`navbar ${(isScrolled || !isHomePage) ? 'navbar-scrolled' : ''}`}
+        className={`navbar ${(isScrolled || !isHomePage) ? 'navbar-scrolled' : ''} ${isHomePage ? 'is-home' : ''}`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -70,7 +70,7 @@ const Navbar = () => {
           whileTap={{ scale: 0.95 }}
           className="logo"
         >
-          <NavLink to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700, fontSize: '1.5rem', textDecoration: 'none', color: isMenuOpen ? 'var(--secondary)' : (isScrolled || !isHomePage ? 'var(--secondary)' : 'white') }}>
+          <NavLink to="/" className="logo-link">
             <motion.div
               animate={{ rotate: [0, 10, -10, 0] }}
               transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
@@ -124,6 +124,13 @@ const Navbar = () => {
             animate="opened"
             exit="closed"
           >
+            <button
+              className="mobile-menu-close"
+              onClick={() => setIsMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <X size={35} color="white" />
+            </button>
             <ul className="mobile-nav-links">
               {navLinks.map((item, index) => (
                 <motion.li

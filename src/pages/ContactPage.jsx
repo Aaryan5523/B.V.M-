@@ -14,7 +14,7 @@ const ContactPage = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <span className="about-subtitle" style={{ color: 'var(--primary)' }}>Connect With Us</span>
-                        <h1>Let's Power Your Future</h1>
+                        <h1 className="contact-title">Let's Power Your Future</h1>
                     </motion.div>
                 </div>
             </section>
@@ -71,7 +71,7 @@ const ContactPage = () => {
                             </div>
 
                             <form onSubmit={(e) => e.preventDefault()}>
-                                <div className="grid grid-2" style={{ gap: '20px' }}>
+                                <div className="contact-form-row">
                                     <div className="premium-input-group">
                                         <label>Full Name</label>
                                         <input type="text" placeholder="Enter your name" required />
@@ -82,7 +82,7 @@ const ContactPage = () => {
                                     </div>
                                 </div>
 
-                                <div className="grid grid-2" style={{ gap: '20px' }}>
+                                <div className="contact-form-row">
                                     <div className="premium-input-group">
                                         <label>Phone Number</label>
                                         <input type="tel" placeholder="Enter your phone number" required />

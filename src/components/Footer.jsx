@@ -14,8 +14,8 @@ const Footer = () => {
                         viewport={{ once: true }}
                     >
                         <motion.div
-                            className="logo"
-                            style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700, fontSize: '2rem', color: 'white' }}
+                            className="logo footer-logo"
+                            style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700, color: 'white' }}
                             whileHover={{ scale: 1.05, filter: "drop-shadow(0 0 8px var(--primary))" }}
                         >
                             <motion.div
@@ -51,7 +51,7 @@ const Footer = () => {
                     <div className="footer-contact">
                         <h4 className="footer-title">CONTACT</h4>
                         <motion.div className="contact-item" whileHover={{ y: -5, x: 5 }}>
-                            <MapPin size={30} color="var(--primary)" />
+                            <MapPin size={40} color="var(--primary)" />
                             <a
                                 href="https://www.google.com/maps/search/?api=1&query=Shop+No.103,+Akhilam+Corner,+Nr.Samarpan+Circle,+Opp.Kashi+Inn+Hotel,+Jamnagar+-+361006"
                                 target="_blank"
@@ -62,13 +62,13 @@ const Footer = () => {
                             </a>
                         </motion.div>
                         <motion.div className="contact-item" whileHover={{ y: -5, x: 5 }}>
-                            <Phone size={20} color="var(--primary)" />
+                            <Phone size={40} color="var(--primary)" />
                             <div className="phone-numbers">
                                 <a href="tel:+918109009954" className="footer-contact-link">+91 81090 09954</a>
                             </div>
                         </motion.div>
                         <motion.div className="contact-item" whileHover={{ y: -5, x: 5 }}>
-                            <Mail size={20} color="var(--primary)" />
+                            <Mail size={40} color="var(--primary)" />
                             <a href="mailto:info@bvminfra.com" className="footer-contact-link">info@bvminfra.com</a>
                         </motion.div>
                     </div>

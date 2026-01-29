@@ -64,6 +64,13 @@
   line-height: 1.1;
 }
 
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .hero-content p {
   font-size: clamp(1rem, 4vw, 1.5rem);
   color: #E5E7EB;
@@ -158,18 +165,18 @@
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
-    text-align: center;
+    text-align: left;
   }
 
   .footer-brand .logo,
   .footer-contact,
   .contact-item {
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   .footer-description {
-    margin: 0 auto;
+    margin: 0;
   }
 }
 
@@ -361,15 +368,17 @@
 /* Global Mobile Fixes */
 @media (max-width: 768px) {
   .hero-container {
-    height: auto;
-    min-height: 80vh;
+    height: 100vh;
+    min-height: 600px;
   }
 
   .hero {
-    position: relative;
-    padding: 120px 1.5rem 60px;
-    height: auto;
-    min-height: 80vh;
+    position: absolute;
+    padding: 100px 1.5rem 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .collection-section {
@@ -381,9 +390,23 @@
   }
 
   .filter-tabs {
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    padding-bottom: 0.5rem;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    margin: 1rem 0 2rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .filter-btn {
