@@ -62,13 +62,13 @@ const Footer = () => {
                             </a>
                         </motion.div>
                         <motion.div className="contact-item" whileHover={{ y: -5, x: 5 }}>
-                            <Phone size={40} color="var(--primary)" />
+                            <Phone size={20} color="var(--primary)" />
                             <div className="phone-numbers">
                                 <a href="tel:+918109009954" className="footer-contact-link">+91 81090 09954</a>
                             </div>
                         </motion.div>
                         <motion.div className="contact-item" whileHover={{ y: -5, x: 5 }}>
-                            <Mail size={40} color="var(--primary)" />
+                            <Mail size={20} color="var(--primary)" />
                             <a href="mailto:info@bvminfra.com" className="footer-contact-link">info@bvminfra.com</a>
                         </motion.div>
                     </div>
